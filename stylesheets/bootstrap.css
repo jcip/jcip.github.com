@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=d41ecb0f5809c6d335e5)
- * Config saved to config.json and https://gist.github.com/d41ecb0f5809c6d335e5
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=43c68298c8af015b4165)
+ * Config saved to config.json and https://gist.github.com/43c68298c8af015b4165
  */
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
@@ -1088,7 +1088,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -6041,7 +6041,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6159,7 +6159,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
