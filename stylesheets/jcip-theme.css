@@ -68,6 +68,14 @@ body {
 }
 
 /*
+ * Disabling links
+ */
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+/*
  * FAQ styling
  */
 .faqHeader {
