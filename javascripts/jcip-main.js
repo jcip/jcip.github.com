@@ -12,8 +12,8 @@ $(function() {
             }
         }
         
-        initLink("faq.html");
-        initLink("authors.html");
+        initLink("faq.html", "faq-link");
+        initLink("authors.html", "author-link");
     });
     $('.footer').load('/include/jcip-footer.html');
 });
