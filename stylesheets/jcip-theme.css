@@ -1,11 +1,6 @@
 /*
  * This is where specific adjustments can be made to Bootstrap defaults
- * for local Seat Yourself use. Adapted from from Bootstrap example code.
- * --------------------------------------------------------------------
- * This file is maintained identically in two different repositories:
- *
- * https://github.com/SeatYourself/sy-site/blob/master/css/sy-theme.css
- * https://github.com/SeatYourself/sy-sources/blob/master/modules/biz.seatyourself.sy/src/main/webapp/css/sy-theme.css
+ * for local JCiP use. Adapted from from Bootstrap example code.
  * --------------------------------------------------------------------
  */
 
@@ -32,11 +27,11 @@ header {
 }
 
 /*
- * Adjust 36px height logo within 40px navbar.
+ * Adjust 40px height logo within 40px navbar.
  */
 .navbar-brand {
-  padding-top: 1px;
-  padding-bottom: 3px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .navbar-form {
@@ -74,82 +69,51 @@ body {
 
 
 /*
- * Other styles
+ * Palatino fonts
+ * --------------------------------------------------------------------
+ * Adapted from http://www.cssfontstack.com/Palatino
  * --------------------------------------------------------------------
  */
 
-/*
- * Elements that can be jump targets get some padding to
- * prevent them being covered by fixed navbar. From @mnot
- * in https://github.com/twbs/bootstrap/issues/1768
- */
-a[id]:before, 
-li[id]:before, 
-h1[id]:before, 
-h2[id]:before, 
-h3[id]:before, 
-h4[id]:before, 
-h5[id]:before, 
-h6[id]:before {
-  display: block;
-  content: " ";
-  margin-top: -50px;  /* 40px navbar + 10px padding to  */
-  height: 50px;       /* keep content from touching bar */
-  visibility: hidden;
+h1 {
+	font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
 }
-
-/*
- * The watermark plug-in uses native placeholder support when
- * possible, but for IE8 and IE9, it emulates the behavior.
- * This style rule is for these emulated placeholders.
- */
-.watermark {
-  color: #f00 !important;
+h3 {
+	font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 15.4px;
 }
-
-
-/*
- * Seat Yourself UI elements - uses default var styling for now
- */
-var.ui-element {
+p {
+	font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
 }
-
-
-/*
- * Uncomment to use serif fonts everywhere, overriding Bootstrap default.
- *
- * See https://stackoverflow.com/questions/11361294/twitter-bootstrap-use-serif-fonts
- * for other, better ways to accomplish this.
- */
-/*
-body,
-h1,h2,h3,h4,h5,h6,
-input,
-button,
-select,
-textarea,
-.navbar-search .search-query {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  //font-size: 2.2em;
+blockquote {
+	font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+	font-size: 21px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 30px;
 }
-*/
+pre {
+	font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 18.5714px;
+} 
 
-
-/*
- * Colors matching seat states in SY seat manager
- * --------------------------------------------------------------------
- * Unused values -- don't distinguish links through these rules:
- *   border-color: black;
- *   text-decoration: underline;
- */
-
-.sy-vendor-available {
-  background: rgb(187,221,255);
-  color: black;
-}
-.sy-vendor-sold {
-  background: rgb(119,68,136) !important;
-  color: white;
-}
-
-/* end of sy-theme.css */
+/* end of jcip-theme.css */
