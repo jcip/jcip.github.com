@@ -1,0 +1,155 @@
+/*
+ * This is where specific adjustments can be made to Bootstrap defaults
+ * for local Seat Yourself use. Adapted from from Bootstrap example code.
+ * --------------------------------------------------------------------
+ * This file is maintained identically in two different repositories:
+ *
+ * https://github.com/SeatYourself/sy-site/blob/master/css/sy-theme.css
+ * https://github.com/SeatYourself/sy-sources/blob/master/modules/biz.seatyourself.sy/src/main/webapp/css/sy-theme.css
+ * --------------------------------------------------------------------
+ */
+
+/*
+ * Fixed top navbar
+ * --------------------------------------------------------------------
+ */
+
+/*
+ * Allow space for navbar-fixed-top. Doesn't work with navbars that
+ * aren't fixed. See http://getbootstrap.com/components/#navbar-fixed-top
+ * for more on why we put the top padding on body. Also see sticky footer
+ * styles below for corresponding body style to accommodate footer.
+ */
+body {
+  /* Height of navbar */
+  margin-top: 40px;
+  /* Additional padding between navbar and content */
+  padding-top: 12px;
+}
+
+header {
+  background-color: #f5f5f5;
+}
+
+/*
+ * Adjust 36px height logo within 40px navbar.
+ */
+.navbar-brand {
+  padding-top: 1px;
+  padding-bottom: 3px;
+}
+
+.navbar-form {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/*
+ * Sticky footer styles
+ * --------------------------------------------------------------------
+ */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height (set below) */
+  margin-bottom: 40px;
+  /* Additional padding between content and footer */
+  padding-bottom: 12px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  /* No need for margin on bottom with footer */
+  margin-bottom: 0px;
+  background-color: #f5f5f5;
+}
+
+
+/*
+ * Other styles
+ * --------------------------------------------------------------------
+ */
+
+/*
+ * Elements that can be jump targets get some padding to
+ * prevent them being covered by fixed navbar. From @mnot
+ * in https://github.com/twbs/bootstrap/issues/1768
+ */
+a[id]:before, 
+li[id]:before, 
+h1[id]:before, 
+h2[id]:before, 
+h3[id]:before, 
+h4[id]:before, 
+h5[id]:before, 
+h6[id]:before {
+  display: block;
+  content: " ";
+  margin-top: -50px;  /* 40px navbar + 10px padding to  */
+  height: 50px;       /* keep content from touching bar */
+  visibility: hidden;
+}
+
+/*
+ * The watermark plug-in uses native placeholder support when
+ * possible, but for IE8 and IE9, it emulates the behavior.
+ * This style rule is for these emulated placeholders.
+ */
+.watermark {
+  color: #f00 !important;
+}
+
+
+/*
+ * Seat Yourself UI elements - uses default var styling for now
+ */
+var.ui-element {
+}
+
+
+/*
+ * Uncomment to use serif fonts everywhere, overriding Bootstrap default.
+ *
+ * See https://stackoverflow.com/questions/11361294/twitter-bootstrap-use-serif-fonts
+ * for other, better ways to accomplish this.
+ */
+/*
+body,
+h1,h2,h3,h4,h5,h6,
+input,
+button,
+select,
+textarea,
+.navbar-search .search-query {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  //font-size: 2.2em;
+}
+*/
+
+
+/*
+ * Colors matching seat states in SY seat manager
+ * --------------------------------------------------------------------
+ * Unused values -- don't distinguish links through these rules:
+ *   border-color: black;
+ *   text-decoration: underline;
+ */
+
+.sy-vendor-available {
+  background: rgb(187,221,255);
+  color: black;
+}
+.sy-vendor-sold {
+  background: rgb(119,68,136) !important;
+  color: white;
+}
+
+/* end of sy-theme.css */
