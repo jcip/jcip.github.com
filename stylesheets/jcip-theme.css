@@ -67,4 +67,14 @@ body {
   background-color: #f5f5f5;
 }
 
+/*
+ * FAQ styling
+ */
+.faqHeader {
+  font-size: 120%;
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 6px;
+}
+
 /* end of jcip-theme.css */
