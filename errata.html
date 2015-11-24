@@ -1,160 +1,176 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
-<meta name="ProgId" content="FrontPage.Editor.Document">
-<title>Java Concurrency in Practice</title>
-<link rel="stylesheet" type="text/css" href="jcip.css">
-<meta name="Microsoft Border" content="tb, default">
-</head>
+    <title>Java Concurrency in Practice</title>
 
-<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+    <meta name="description" content="Template for JCiP pages">
+    <meta name="author" content="Tim Peierls">
+    <meta name="author" content="Brian Goetz">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
-  <table class="Border">
-    <tr>
-      <td class="GoRight">
-      </td>
-    </tr>
-  </table>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/stylesheets/jcip-theme.css">
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+      ga('create', 'UA-38133818-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
 
-<!-- page headline -->
+  <body role="document">
+    <header class="navbar navbar-default navbar-fixed-top">
+      <!-- loaded dynamically -->
+    </header>
 
-<h1 class="PageTitle">Errata</h1>
-<p class="ErrataLocation">&nbsp;</p>
-<ul>
-  <li> <em>p.6:</em>   In Figure 1.1, <tt>nextValue</tt> should be <tt>getNext</tt>. </li>
-                       <!-- caught by Jaime Nino -->
+    <div class="container" role="main">
 
-  <li> <em>p.6:</em>   In the first paragraph, <tt>nextValue++</tt> should be <tt>value++</tt>. </li>
-                       <!-- caught by Jaime Nino -->
+      <h1 class="PageTitle">Errata</h1>
+      <p class="ErrataLocation">&nbsp;</p>
+      <ul>
+        <li> <em>p.6:</em>   In Figure 1.1, <tt>nextValue</tt> should be <tt>getNext</tt>. </li>
+                             <!-- caught by Jaime Nino -->
 
-  <li> <em>p.7:</em>   In the second paragraph, <tt>nextValue</tt> should be <tt>getNext</tt>. </li>
-                       <!-- caught by Jaime Nino -->
-  <li> <em>p.7:</em>   In Listing 1.2, <tt>nextValue</tt> should be <tt>value</tt> (to be consistent with Listing 1.1). </li>
-                       <!-- caught by Jaime Nino -->
+        <li> <em>p.6:</em>   In the first paragraph, <tt>nextValue++</tt> should be <tt>value++</tt>. </li>
+                             <!-- caught by Jaime Nino -->
 
-  <li> <em>p.34:</em>  In the last sentence, the reference to <tt>done</tt> should be to <tt>ready</tt>. </li>
-                       <!-- caught by Mike Fikes -->
+        <li> <em>p.7:</em>   In the second paragraph, <tt>nextValue</tt> should be <tt>getNext</tt>. </li>
+                             <!-- caught by Jaime Nino -->
+        <li> <em>p.7:</em>   In Listing 1.2, <tt>nextValue</tt> should be <tt>value</tt> (to be consistent with Listing 1.1). </li>
+                             <!-- caught by Jaime Nino -->
 
-  <li> <em>p.53:</em>  "when shared a Date" should "when sharing a Date". </li>
-                       <!-- caught by Martin Buchholz -->
+        <li> <em>p.34:</em>  In the last sentence, the reference to <tt>done</tt> should be to <tt>ready</tt>. </li>
+                             <!-- caught by Mike Fikes -->
 
-  <li> <em>p.62:</em>  In the last paragraph before section 4.3, "getLocation" should be "getLocations". </li>
-                       <!-- caught by Thomas Strohmann -->
+        <li> <em>p.53:</em>  "when shared a Date" should "when sharing a Date". </li>
+                             <!-- caught by Martin Buchholz -->
 
-  <li> <em>p.68:</em>  The last word of the first paragraph should be "variables", not "varaibles". </li>
-                       <!-- caught by Vesa Hiltunen -->
+        <li> <em>p.62:</em>  In the last paragraph before section 4.3, "getLocation" should be "getLocations". </li>
+                             <!-- caught by Thomas Strohmann -->
 
-  <li> <em>p.69:</em>  In Listing 4.11, the two-arg constructor body should be simply "this.set(x, y)". </li>
-                       <!-- caught by Friedrich Esser -->
+        <li> <em>p.68:</em>  The last word of the first paragraph should be "variables", not "varaibles". </li>
+                             <!-- caught by Vesa Hiltunen -->
 
-  <li> <em>p.74:</em>  In Listing 4.16, "if (contains)" should be "if (!contains)". The entire example would
-                       be better expressed using a local variable "absent", as in the previous two listings. </li>
-                       <!-- caught by Milan Fort -->
+        <li> <em>p.69:</em>  In Listing 4.11, the two-arg constructor body should be simply "this.set(x, y)". </li>
+                             <!-- caught by Friedrich Esser -->
 
-  <li> <em>p.74:</em>  In the call-out at the bottom of the page, "synchronization" is missing an "r". </li>
-                       <!-- caught by David Holmes -->
+        <li> <em>p.74:</em>  In Listing 4.16, "if (contains)" should be "if (!contains)". The entire example would
+                             be better expressed using a local variable "absent", as in the previous two listings. </li>
+                             <!-- caught by Milan Fort -->
 
-  <li> <em>p.81:</em>  In Figure 5.1, the threads are mislabeled: <tt>A</tt> and <tt>B</tt> should be exchanged. </li>
-                       <!-- caught by David Biesack -->
+        <li> <em>p.74:</em>  In the call-out at the bottom of the page, "synchronization" is missing an "r". </li>
+                             <!-- caught by David Holmes -->
 
-  <li> <em>p.84:</em>  In the first paragraph, "collections are arguments" should be "collections as arguments". </li>
-                       <!-- caught by Alexei Nekrassov -->
+        <li> <em>p.81:</em>  In Figure 5.1, the threads are mislabeled: <tt>A</tt> and <tt>B</tt> should be exchanged. </li>
+                             <!-- caught by David Biesack -->
 
-  <li> <em>p.89:</em>  In the last line, "DiskCrawler" should be "FileCrawler". </li>
-                       <!-- caught by Polson Keeratibumrungpong and independently by Sascha Kratky -->
+        <li> <em>p.84:</em>  In the first paragraph, "collections are arguments" should be "collections as arguments". </li>
+                             <!-- caught by Alexei Nekrassov -->
 
-  <li> <em>p.121:</em> In the last paragraph,
-                       "Tasks submitted to an <tt>ExecutorService</tt> after it has been shut down are
-                       handled by the <em>rejected execution handler</em> (see Section 8.3.3)" is too general.
-                       Rejected execution handling is provided specifically by <tt>ThreadPoolExecutor</tt>, an
-                       implementation of <tt>ExecutorService</tt>, not by <tt>ExecutorService</tt> itself. </li>
-                       <!-- caught by Joe Bowbeer -->
+        <li> <em>p.89:</em>  In the last line, "DiskCrawler" should be "FileCrawler". </li>
+                             <!-- caught by Polson Keeratibumrungpong and independently by Sascha Kratky -->
 
-  <li> <em>p.130:</em> In Listing 6.15, <tt>info</tt> is superfluously marked <tt>final</tt>. </li>
+        <li> <em>p.121:</em> In the last paragraph,
+                             "Tasks submitted to an <tt>ExecutorService</tt> after it has been shut down are
+                             handled by the <em>rejected execution handler</em> (see Section 8.3.3)" is too general.
+                             Rejected execution handling is provided specifically by <tt>ThreadPoolExecutor</tt>, an
+                             implementation of <tt>ExecutorService</tt>, not by <tt>ExecutorService</tt> itself. </li>
+                             <!-- caught by Joe Bowbeer -->
 
-  <li> <em>p.148:</em> In <em>Asynchronous I/O with Selector</em>, it is the <tt>close</tt> method that causes
-                       <tt>select</tt> to return prematurely by throwing <tt>ClosedSelectedException</tt>,
-                       not the <tt>wakeup</tt> method. </li>
-                       <!-- caught by Matthias Ernst -->
+        <li> <em>p.130:</em> In Listing 6.15, <tt>info</tt> is superfluously marked <tt>final</tt>. </li>
 
-  <li> <em>p.153:</em> In the second paragraph, "satifying" should be "satisfying". </li>
-                       <!-- caught by Tyler Hammond -->
+        <li> <em>p.148:</em> In <em>Asynchronous I/O with Selector</em>, it is the <tt>close</tt> method that causes
+                             <tt>select</tt> to return prematurely by throwing <tt>ClosedSelectedException</tt>,
+                             not the <tt>wakeup</tt> method. </li>
+                             <!-- caught by Matthias Ernst -->
 
-  <li> <em>p.154:</em> In Listing 7.15, the last two <tt>synchronized (this)</tt> lines should read
-                       <tt>synchronized (LogService.this)</tt>. </li>
-                       <!-- caught by Tom Hawtin -->
+        <li> <em>p.153:</em> In the second paragraph, "satifying" should be "satisfying". </li>
+                             <!-- caught by Tyler Hammond -->
 
-  <li> <em>p.172:</em> In footnote 3, "core size of zero" should be "non-zero core size". </li>
-                       <!-- caught by Mike Fikes -->
+        <li> <em>p.154:</em> In Listing 7.15, the last two <tt>synchronized (this)</tt> lines should read
+                             <tt>synchronized (LogService.this)</tt>. </li>
+                             <!-- caught by Tom Hawtin -->
 
-  <li> <em>p.179:</em> In the first sentence of Section 8.4, <tt>terminate</tt> should be <tt>terminated</tt>. </li>
-                       <!-- caught by Tom White -->
+        <li> <em>p.172:</em> In footnote 3, "core size of zero" should be "non-zero core size". </li>
+                             <!-- caught by Mike Fikes -->
 
-  <li> <em>p.197:</em> In Listing 9.6, the first instance of <tt>runningTask != null</tt> should be
-                       <tt>runningTask == null</tt>. </li>
-                       <!-- caught by Chris Heisterkamp -->
+        <li> <em>p.179:</em> In the first sentence of Section 8.4, <tt>terminate</tt> should be <tt>terminated</tt>. </li>
+                             <!-- caught by Tom White -->
 
-  <li> <em>p.197:</em> In Listing 9.6, <tt>Thread.currentThread().isInterrupted()</tt> should be
-                       <tt>Thread.interrupted()</tt>. </li>
-                       <!-- caught by David Holmes -->
+        <li> <em>p.197:</em> In Listing 9.6, the first instance of <tt>runningTask != null</tt> should be
+                             <tt>runningTask == null</tt>. </li>
+                             <!-- caught by Chris Heisterkamp -->
 
-  <li> <em>p.200:</em> In Listing 9.8, the argument to <tt>backgroundExec.execute</tt> should be
-                       <tt>listener.task</tt> rather than just <tt>task</tt>, and the first and last lines
-                       of the listing should be deleted. </li>
-                       <!-- caught by Stephen Morring -->
+        <li> <em>p.197:</em> In Listing 9.6, <tt>Thread.currentThread().isInterrupted()</tt> should be
+                             <tt>Thread.interrupted()</tt>. </li>
+                             <!-- caught by David Holmes -->
 
-  <li> <em>p.214:</em> In Listing 10.6, <tt>Taxi.setLocation</tt> should not be a synchronized method.
-                       (The synchronized block in its body is correct, however.) </li>
+        <li> <em>p.200:</em> In Listing 9.8, the argument to <tt>backgroundExec.execute</tt> should be
+                             <tt>listener.task</tt> rather than just <tt>task</tt>, and the first and last lines
+                             of the listing should be deleted. </li>
+                             <!-- caught by Stephen Morring -->
 
-  <li> <em>p.239:</em> Section 11.4.5, second paragraph, fourth line: "excusively" should be "exclusively". </li>
-                       <!-- caught by Alexei Nekrassov -->
+        <li> <em>p.214:</em> In Listing 10.6, <tt>Taxi.setLocation</tt> should not be a synchronized method.
+                             (The synchronized block in its body is correct, however.) </li>
 
-  <li> <em>p.259:</em> In Listing 12.9, the call to newFixedThreadPool should have another argument, "threadFactory". </li>
-                       <!-- caught by Tomohiro Takahashi -->
+        <li> <em>p.239:</em> Section 11.4.5, second paragraph, fourth line: "excusively" should be "exclusively". </li>
+                             <!-- caught by Alexei Nekrassov -->
 
-  <li> <em>p.265:</em> last paragraph, 1st sentence: "fair semaphores provides" should be "fair semaphores provide".</li>
-                       <!-- caught by Detlef Morgenstern -->
+        <li> <em>p.259:</em> In Listing 12.9, the call to newFixedThreadPool should have another argument, "threadFactory". </li>
+                             <!-- caught by Tomohiro Takahashi -->
 
-  <li> <em>p.269:</em> 2nd paragraph, 2nd sentence: "the" is repeated in "If the the work..." </li>
-                       <!-- caught by Alexei Nekrassov -->
+        <li> <em>p.265:</em> last paragraph, 1st sentence: "fair semaphores provides" should be "fair semaphores provide".</li>
+                             <!-- caught by Detlef Morgenstern -->
 
-  <li> <em>p.280:</em> In Listing 13.3, the relational operator in the 5th line from the bottom should
-                       be <tt>&gt;=</tt> (<em>greater-than-or-equals</em>), not <tt>&lt;</tt> (<em>less-than</em>). </li>
+        <li> <em>p.269:</em> 2nd paragraph, 2nd sentence: "the" is repeated in "If the the work..." </li>
+                             <!-- caught by Alexei Nekrassov -->
 
-  <li> <em>p.292:</em> In Listing 14.1, should have <tt>release lock</tt> after <tt>perform action</tt>. </li>
+        <li> <em>p.280:</em> In Listing 13.3, the relational operator in the 5th line from the bottom should
+                             be <tt>&gt;=</tt> (<em>greater-than-or-equals</em>), not <tt>&lt;</tt> (<em>less-than</em>). </li>
 
-  <li> <em>p.301:</em> In the fifth bullet item in the middle of the page, "the the" should be "the". </li>
-                       <!-- caught by Glyn Normington -->
+        <li> <em>p.292:</em> In Listing 14.1, should have <tt>release lock</tt> after <tt>perform action</tt>. </li>
 
-  <li> <em>p.307:</em> In the first paragraph, "Both of these factors make it impossible to enforce the
-                       uniform waiter requirement for using <tt>notifyAll</tt>", it should be <tt>notify</tt>, not
-                       <tt>notifyAll</tt>. </li>
+        <li> <em>p.301:</em> In the fifth bullet item in the middle of the page, "the the" should be "the". </li>
+                             <!-- caught by Glyn Normington -->
 
-  <li> <em>p.340:</em> In Figure 16.1, <tt>y=b</tt> should be <tt>x=b</tt> in Thread A, and <tt>x=a</tt>
-                       should be <tt>y=a</tt> in Thread B. </li>
-                       <!-- caught by Will McQueen -->
+        <li> <em>p.307:</em> In the first paragraph, "Both of these factors make it impossible to enforce the
+                             uniform waiter requirement for using <tt>notifyAll</tt>", it should be <tt>notify</tt>, not
+                             <tt>notifyAll</tt>. </li>
 
-  <li> <em>p.345:</em> The reference in the second paragraph to "Figure 16.3" should be "Listing 16.3". </li>
-                       <!-- caught by Glyn Normington -->
-</ul>
-<p>
-  <a href="mailto:brian@briangoetz.com?subject=JCiP%20Errata">Submit errata or feedback to the authors.</a>
-</p>
-<p class="ErrataLocation">&nbsp;</p>
-&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+        <li> <em>p.340:</em> In Figure 16.1, <tt>y=b</tt> should be <tt>x=b</tt> in Thread A, and <tt>x=a</tt>
+                             should be <tt>y=a</tt> in Thread B. </li>
+                             <!-- caught by Will McQueen -->
 
-  <table class="Border">
-    <tr>
-      <td class="CopyrightCell">
-        Copyright&nbsp; 2006, Brian Goetz and Tim Peierls</td>
-      <td class="CopyrightCell">
-        <p class="GoRight"><img border="0" src="images/jcip-thumbnail.jpg" width="57" height="75"></td>
- </tr> </table>
+        <li> <em>p.345:</em> The reference in the second paragraph to "Figure 16.3" should be "Listing 16.3". </li>
+                             <!-- caught by Glyn Normington -->
+      </ul>
+      <p>
+        <a href="mailto:brian@briangoetz.com?subject=JCiP%20Errata">Submit errata or feedback to the authors.</a>
+      </p>
+      <p class="ErrataLocation">&nbsp;</p>
 
-</td></tr><!--msnavigation--></table></body>
+    </div><!-- /.container -->
+    <footer class="footer navbar">
+      <!-- loaded dynamically -->
+    </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+    -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/jcip-main.js"></script>
+  </body>
 </html>
