@@ -29,11 +29,8 @@
       ga('send', 'pageview');
     </script>
     <style>
-      blockquote p:before {
-        content: '\201C';
-      }
-      blockquote p:after {
-        content: '\201D';
+      .yuk:after {
+        content: '<img src="images/mryuk.gif" alt="(bad)" height="20" width="20" />';
       }
     </style>
   </head>
@@ -61,8 +58,8 @@
 
       <h2>Thread Safety</h2>
       <h3>2.1 <a href="listings/StatelessFactorizer.java">A stateless servlet.</a></h3>
-      <h3>2.2 <a href="listings/UnsafeCountingFactorizer.java">Servlet that counts requests without the necessary
-        synchronization.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /></h3>
+      <h3 class="yuk">2.2 <a href="listings/UnsafeCountingFactorizer.java">Servlet that counts requests without the necessary
+        synchronization.</a> </h3>
       <h3>2.3 <a href="listings/LazyInitRace.java">Race condition in lazy initialization.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /></h3>
       <h3>2.4 <a href="listings/CountingFactorizer.java">Servlet that counts requests using AtomicLong.<a/></h3>
       <h3>2.5 <a href="listings/UnsafeCachingFactorizer.java">Servlet that attempts to cache its last result
