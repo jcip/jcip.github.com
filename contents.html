@@ -1,68 +1,95 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<html>
+    <title>Java Concurrency in Practice</title>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
-  <title>Java Concurrency in Practice</title>
-  <link rel="stylesheet" href="jcip.css" type="text/css" />
-  <meta name="Microsoft Border" content="tb, default">
-</head>
+    <meta name="description" content="Template for JCiP pages">
+    <meta name="author" content="Tim Peierls">
+    <meta name="author" content="Brian Goetz">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
-<body>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/stylesheets/jcip-theme.css">
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-<!-- page header -->
+      ga('create', 'UA-38133818-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
 
-  <h1 class="PageTitle"> Table of Contents</h1>
+  <body role="document">
+    <header class="navbar navbar-default navbar-fixed-top">
+      <!-- loaded dynamically -->
+    </header>
 
+    <div class="container" role="main">
 
-<!-- page body -->
-<p class="ChapTOC">Preface</p>
+      <h1 class="PageTitle"> Table of Contents</h1>
 
-<p class="ChapTOC">Introduction</p>
+        <!-- page body -->
+        <h2>Preface</h2>
 
-<p class="ChapTOC">Part I: Fundamentals</p>
-<b>
-<p ALIGN="LEFT" class="PuzzleTitleTOC">Thread Safety</p>
-<p ALIGN="LEFT" class="PuzzleTitleTOC">Sharing Objects</p>
-<p ALIGN="LEFT" class="PuzzleTitleTOC">Composing Objects</p>
-<p ALIGN="LEFT" class="PuzzleTitleTOC">Building Blocks</p>
-</b>
+        <h2>Introduction</h2>
 
-<p class="ChapTOC">Part II: Structuring Concurrent Applications</p>
+        <h2>Part I: Fundamentals</h2>
 
-  <p class="PuzzleTitleTOC"><a href="jcip-sample.pdf">Task Execution</a>&nbsp;&nbsp; 
-	(downloadable sample chapter)</p>
-
-  <p class="PuzzleTitleTOC">Cancellation and Shutdown</p>
-
-  <p class="PuzzleTitleTOC">Applying Thread Pools</p>
-
-  <p class="PuzzleTitleTOC">GUI Applications</p>
-
-<p class="ChapTOC">Part III: Liveness, Performance, and Testing</p>
-
-  <p class="PuzzleTitleTOC">Avoiding Liveness Hazards</p>
-  <p class="PuzzleTitleTOC">Performance and Scalability</p>
-  <p class="PuzzleTitleTOC">Testing Concurrent Programs</p>
-
-<p class="ChapTOC">Part IV: Advanced Topics</p>
-
-  <p class="PuzzleTitleTOC">Explicit Locks</p>
-  <p class="PuzzleTitleTOC">Building Custom Synchronizers</p>
-  <p class="PuzzleTitleTOC">Atomic Variables and Nonblocking Synchronization</p>
-  <p class="PuzzleTitleTOC">The Java Memory Model</p>
-
-<p class="ChapTOC">Appendices </p>
-
-<p class="PuzzleTitleTOC">Annotations for Concurrency </p>
-<p class="ChapTOC">Bibliography</p>
-<p class="ChapTOC">Index</p>
+          <h3>Thread Safety</h3>
+          <h3>Sharing Objects</h3>
+          <h3>Composing Objects</h3>
+          <h3>Building Blocks</h3>
 
 
-<!-- page footer -->
-<p class="Intro">&nbsp;</p>
-&nbsp;
+        <h2>Part II: Structuring Concurrent Applications</h2>
 
-</body>
+          <h3><a href="jcip-sample.pdf">Task Execution</a> (downloadable sample chapter)</h3>
+          <h3>Cancellation and Shutdown</h3>
+          <h3>Applying Thread Pools</h3>
+          <h3>GUI Applications</h3>
+
+        <h2>Part III: Liveness, Performance, and Testing</h2>
+
+          <h3>Avoiding Liveness Hazards</h3>
+          <h3>Performance and Scalability</h3>
+          <h3>Testing Concurrent Programs</h3>
+
+        <h2>Part IV: Advanced Topics</h2>
+
+          <h3>Explicit Locks</h3>
+          <h3>Building Custom Synchronizers</h3>
+          <h3>Atomic Variables and Nonblocking Synchronization</h3>
+          <h3>The Java Memory Model</h3>
+
+        <h2>Appendices </h2>
+
+          <h3>Annotations for Concurrency </h3>
+
+        <h2>Bibliography</h2>
+
+        <h2>Index</h2>
+
+    </div><!-- /.container -->
+    <footer class="footer navbar">
+      <!-- loaded dynamically -->
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+    -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/jcip-main.js"></script>
+  </body>
 </html>
