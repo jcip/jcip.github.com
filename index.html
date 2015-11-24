@@ -1,59 +1,130 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Java Concurrency in Practice : Site for the Java Concurrency in Practice book" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Java Concurrency in Practice</title>
+
+    <meta name="description" content="JCiP home page">
+    <meta name="author" content="Tim Peierls">
+    <meta name="author" content="Brian Goetz">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/stylesheets/jcip-theme.css">
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-38133818-1', 'auto');
+      ga('send', 'pageview');
+    </script>
   </head>
 
-  <body>
+  <body role="document">
+    <header class="navbar navbar-default navbar-fixed-top">
+      <!-- loaded dynamically -->
+    </header>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/jcip">View on GitHub</a>
+    <div class="container" role="main">
 
-          <h1 id="project_title">Java Concurrency in Practice</h1>
-          <h2 id="project_tagline">Site for the Java Concurrency in Practice book</h2>
+      <div class="row">
 
-        </header>
-    </div>
+        <div class="col-md-4">
+          <ul>
+            <li><a href="contents.html">Table of Contents</a></li>
+            <li><a href="listings.html">View code examples</a> (<a href="jcip-examples-src.jar">source jar</a>)</li>
+            <li>Concurrency annotations:
+              <a href="jcip-annotations.jar">jar</a>,
+              <a href="annotations/doc/index.html">javadoc</a>,
+              <a href="jcip-annotations-src.jar">source</li>
+            <li><a href="jcip-sample.pdf">Sample chapter</a></li>
+            <li>Order from
+              <a href="http://www.amazon.com/gp/product/0321349601?ie=UTF8&tag=none0b69&linkCode=as2&camp=1789&creative=9325&creativeASIN=0321349601">Amazon</a>
+            </li>
+            <li><a href="errata.html">Errata</a></li>
+            <li><a href="praise.html">Praise for <i>Java Concurrency in Practice</i></a></li>
+            <li><a href="authors.html">About the authors</a></li>
+          </ul>
+        </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Java Concurrency in Practice</h3>
+        <div class="col-md-4">
+          <blockquote>
+            <p>
+              &quot;I was fortunate indeed to have worked with a fantastic team on the
+              design and implementation of the concurrency features added to the Java platform
+              in Java 5.0 and Java 6. Now this same team provides the best explanation yet of
+              these new features, and of concurrency in general. Concurrency is no longer a
+              subject for advanced users only. Every Java developer should read this book.&quot;
+            </p>
+            <footer>
+              Martin Buchholz<br>
+              JDK Concurrency Czar, Sun Microsystems
+            </footer>
+          </blockquote>
 
-<p>This site is still under construction, but for the moment you can visit the
-<a href="http://jcip.net.s3-website-us-east-1.amazonaws.com/">old site</a>.
-  Links to javdocs and downloads will be preserved when the new site is up.
-</p>
-      </section>
-    </div>
+          <blockquote>
+            <p>
+              &quot;For the past 30 years, computer performance has been driven by Moore's
+              Law; from now on, it will be driven by Amdahl's Law. Writing code that
+              effectively exploits multiple processors can be very challenging. <i><b>Java
+              Concurrency in Practice</b></i> provides you with the concepts and techniques
+              needed to write safe and scalable Java programs for today's&mdash;and
+              tomorrow's&mdash;systems.&quot;
+            </p>
+            <footer>
+              Doron Rajwan<br>
+              Research Scientist, Intel Corp
+            </footer>
+          </blockquote>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+          <blockquote>
+            <p>
+              &quot;This book covers a very deep and subtle topic in a very clear and concise
+              way, making it the perfect Java Concurrency reference manual. Each page is
+              filled with the problems (and solutions!) that programmers struggle with every
+              day. Effectively exploiting concurrency is becoming more and more important now
+              that Moore's Law is delivering more cores but not faster cores, and this book
+              will show you how to do it.&quot;
+            </p>
+            <footer>
+              Dr. Cliff Click<br>
+              Senior Software Engineer, Azul Systems
+            </footer>
+          </blockquote>
+          <p>
+            <a href="praise.html">More quotes...</a>
+          </p>
+        </div>
 
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-38133818-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+        <div class="col-md-4">
+           <a href="http://www.amazon.com/gp/product/0321349601?ie=UTF8&tag=none0b69&linkCode=as2&camp=1789&creative=9325&creativeASIN=0321349601"
+              class="thumbnail">
+             <img src="/images/jcip-cover.jpg" alt="JCiP book cover">
+           </a>
+        </div>
 
+      </div><!-- /.row -->
 
+    </div><!-- /.container -->
+    <footer class="footer navbar">
+      <!-- loaded dynamically -->
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+    -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/jcip-main.js"></script>
   </body>
 </html>
