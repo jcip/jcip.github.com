@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <title>Java Concurrency in Practice</title>
+  <link rel="stylesheet" type="text/css" href="jcip.css">
+  <meta name="Microsoft Border" content="tb, default">
+        <style>
+<!--
+.ListingTitle {  }
+-->
+</style>
+</head>
+
+<body class="chaptoc">
+
+<!-- page header -->
+
+  <h1 class="PageTitle">Code Listings</h1>
+
+  <pre>
+    Written by Brian Goetz and Tim Peierls with assistance from members of
+    JCP JSR-166 Expert Group and released to the public domain, as explained at
+    <a href="http://creativecommons.org/licenses/publicdomain">http://creativecommons.org/licenses/publicdomain</a>
+  </pre>
+
+
+<!-- page body -->
+<p class="ChapTOC">Introduction</p>
+
+<p class="puzzletitletoc">1.1 <a href="listings/UnsafeSequence.java">Non-thread-safe sequence generator.</a></p>
+<p class="puzzletitletoc">1.2 <a href="listings/Sequence.java">Thread-safe sequence generator.</a></p>
+
+<p class="ChapTOC">Thread Safety</p>
+<p class="puzzletitletoc">2.1 <a href="listings/StatelessFactorizer.java">A stateless servlet.</a></p>
+<p class="puzzletitletoc">2.2 <a href="listings/UnsafeCountingFactorizer.java">Servlet that counts requests without the necessary
+synchronization.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /></p>
+<p class="puzzletitletoc">2.3 <a href="listings/LazyInitRace.java">Race condition in lazy initialization.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /></p>
+<p class="puzzletitletoc">2.4 <a href="listings/CountingFactorizer.java">Servlet that counts requests using AtomicLong.<a/></p>
+<p class="puzzletitletoc">2.5 <a href="listings/UnsafeCachingFactorizer.java">Servlet that attempts to cache its last result
+without adequate atomicity.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /></p>
+<p class="puzzletitletoc">2.6 <a href="listings/SynchronizedFactorizer.java">Servlet that caches last result, but with unnacceptably
+poor concurrency.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /></p>
+<p class="puzzletitletoc">2.7 <a href="listings/NonReentrantDeadlock.java">Code that would deadlock if intrinsic locks were
+not reentrant.</a></p>
+<p class="puzzletitletoc">2.8 <a href="listings/CachedFactorizer.java">Servlet that caches its last request and result.</a></p>
+
+<p class="ChapTOC">Sharing Objects</p>
+
+<p class="puzzletitletoc">3.1 <a href="listings/NoVisibility.java">Sharing variables without synchronization.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc">3.2 <a href="listings/MutableInteger.java">Non-thread-safe mutable integer holder.</a> </p>
+<p class="puzzletitletoc">3.3 <a href="listings/SynchronizedInteger.java">Thread-safe mutable integer holder.</a> </p>
+<p class="puzzletitletoc">3.4 <a href="listings/CountingSheep.java">Counting sheep.</a> </p>
+<p class="puzzletitletoc">3.5 <a href="listings/Secrets.java">Publishing an object.</a> </p>
+<p class="puzzletitletoc">3.6 <a href="listings/UnsafeStates.java">Allowing internal mutable state to escape.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc">3.7 <a href="listings/ThisEscape.java">Implicitly allowing the this reference to escape.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc">3.8 <a href="listings/SafeListener.java">Using a factory method to prevent the this reference from escaping during construction.</a> </p>
+<p class="puzzletitletoc">3.9 <a href="listings/Animals.java">Thread confinement of local primitive and reference variables.</a> </p>
+<p class="puzzletitletoc">3.10 <a href="listings/ConnectionDispenser.java">Using ThreadLocal to ensure thread confinement.</a> </p>
+<p class="puzzletitletoc">3.11 <a href="listings/ThreeStooges.java">Immutable class built out of mutable underlying objects.</a> </p>
+<p class="puzzletitletoc">3.12 <a href="listings/OneValueCache.java">Immutable holder for caching a number and its factors.</a> </p>
+<p class="puzzletitletoc">3.13 <a href="listings/VolatileCachedFactorizer.java">Caching the last result using a volatile reference to an immutable holder object.</a> </p>
+<p class="puzzletitletoc">3.14 <a href="listings/StuffIntoPublic.java">Publishing an object without adequate synchronization.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc">3.15 <a href="listings/Holder.java">Class at risk of failure if not properly published.</a> </p>
+
+<p class="ChapTOC">Composing Objects</p>
+
+<p class="puzzletitletoc">4.1 <a href="listings/Counter.java">Simple thread-safe counter using the Java monitor pattern.</a> </p>
+<p class="puzzletitletoc">4.2 <a href="listings/PersonSet.java">Using confinement to ensure thread safety.</a> </p>
+<p class="puzzletitletoc">4.3 <a href="listings/PrivateLock.java">Guarding state with a private lock.</a> </p>
+<p class="puzzletitletoc">4.4 <a href="listings/MonitorVehicleTracker.java">Monitor-based vehicle tracker implementation.</a> </p>
+<p class="puzzletitletoc">4.5 <a href="listings/MutablePoint.java">Mutable point class similar to java.awt.Point.</a> </p>
+<p class="puzzletitletoc">4.6 <a href="listings/Point.java">Immutable Point class used by DelegatingVehicleTracker.</a> </p>
+<p class="puzzletitletoc">4.7 <a href="listings/DelegatingVehicleTracker.java">Delegating thread safety to a ConcurrentHashMap.</a></p>
+<p class="puzzletitletoc">4.8 <a href="listings/DelegatingVehicleTracker.java">Returning a static copy of the location set instead of a 'live' one.</a> </p>
+<p class="puzzletitletoc">4.9 <a href="listings/VisualComponent.java">Delegating thread safety to multiple underlying state variables.</a> </p>
+<p class="puzzletitletoc">4.10 <a href="listings/NumberRange.java">Number range class that does not sufficiently protect its invariants.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc">4.11 <a href="listings/SafePoint.java">Thread-safe mutable point class.</a> </p>
+<p class="puzzletitletoc">4.12 <a href="listings/PublishingVehicleTracker.java">Vehicle tracker that safely publishes underlying state.</a> </p>
+<p class="puzzletitletoc">4.13 <a href="listings/BetterVector.java">Extending Vector to have a put-if-absent method.</a> </p>
+<p class="puzzletitletoc">4.14 <a href="listings/ListHelpers.java">Non-thread-safe attempt to implement put-if-absent.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /></p>
+<p class="puzzletitletoc">4.15 <a href="listings/ListHelpers.java">Implementing put-if-absent with client-side locking.</a> </p>
+<p class="puzzletitletoc">4.16 <a href="listings/ImprovedList.java">Implementing put-if-absent using composition.</a> </p>
+
+<p class="ChapTOC">Building Blocks</p>
+<p class="puzzletitletoc"> 5.1 <a href="listings/UnsafeVectorHelpers.java">Compound actions on a Vector that may produce confusing results.</a> </p>
+<p class="puzzletitletoc"> 5.2 <a href="listings/SafeVectorHelpers.java">Compound actions on Vector using client-side locking.</a> </p>
+<p class="puzzletitletoc"> 5.3 Iteration that may throw ArrayIndexOutOfBoundsException. (fragment)</p>
+<p class="puzzletitletoc"> 5.4 Iteration with client-side locking. (fragment)</p>
+<p class="puzzletitletoc"> 5.5 Iterating a List with an Iterator. (fragment)</p>
+<p class="puzzletitletoc"> 5.6 <a href="listings/HiddenIterator.java">Iteration hidden within string concatenation.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc"> 5.7 <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/concurrent/ConcurrentMap.html#method_summary">
+                                 ConcurrentMap interface.</a>
+                               (external link to Javadoc)</p>
+<p class="puzzletitletoc"> 5.8 <a href="listings/ProducerConsumer.java">Producer and consumer tasks in a desktop search application.</a> </p>
+<p class="puzzletitletoc"> 5.9 <a href="listings/ProducerConsumer.java">Starting the desktop search.</a> </p>
+<p class="puzzletitletoc"> 5.10 <a href="listings/TaskRunnable.java">Restoring the interrupted status so as not to swallow the interrupt.</a> </p>
+<p class="puzzletitletoc"> 5.11 <a href="listings/TestHarness.java">Using CountDownLatch for starting and stopping threads in timing tests.</a></p>
+<p class="puzzletitletoc"> 5.12 <a href="listings/Preloader.java">Using FutureTask to preload data that is needed later.</a> </p>
+<p class="puzzletitletoc"> 5.13 <a href="listings/LaunderThrowable.java">Coercing an unchecked Throwable to a RuntimeException.</a> </p>
+<p class="puzzletitletoc"> 5.14 <a href="listings/BoundedHashSet.java">Using Semaphore to bound a collection.</a> </p>
+<p class="puzzletitletoc"> 5.15 <a href="listings/CellularAutomata.java">Coordinating computation in a cellular automaton with CyclicBarrier.</a> </p>
+<p class="puzzletitletoc"> 5.16 <a href="listings/Memoizer1.java">Initial cache attempt using HashMap and synchronization.</a> </p>
+<p class="puzzletitletoc"> 5.17 <a href="listings/Memoizer2.java">Replacing HashMap with ConcurrentHashMap.</a> </p>
+<p class="puzzletitletoc"> 5.18 <a href="listings/Memoizer2.java">Memoizing wrapper using FutureTask.</a> </p>
+<p class="puzzletitletoc"> 5.19 <a href="listings/Memoizer.java">Final implementation of Memoizer.</a></p>
+<p class="puzzletitletoc"> 5.20 <a href="listings/Factorizer.java">Factorizing servlet that caches results using Memoizer.</a> </p>
+
+<p class="ChapTOC">Task Execution</p>
+
+<p class="puzzletitletoc"> 6.1 <a href="listings/SingleThreadWebServer.java">Sequential web server. </a></p>
+<p class="puzzletitletoc"> 6.2 <a href="listings/ThreadPerTaskWebServer.java">Web server that starts a new thread for each request.</a> </p>
+<p class="puzzletitletoc"> 6.3 <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/concurrent/Executor.html#method_summary">
+                                 Executor interface.</a>
+                               (external link to Javadoc) </p>
+<p class="puzzletitletoc"> 6.4 <a href="listings/TaskExecutionWebServer.java">Web server using a thread pool.</a> </p>
+<p class="puzzletitletoc"> 6.5 <a href="listings/ThreadPerTaskExecutor.java">Executor that starts a new thread for each task.</a> </p>
+<p class="puzzletitletoc"> 6.6 <a href="listings/WithinThreadExecutor.java">Executor that executes tasks synchronously in the calling thread.</a> </p>
+<p class="puzzletitletoc"> 6.7 <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/concurrent/ExecutorService.html#method_summary">
+                                 Lifecycle methods in ExecutorService.</a>
+                               (external link to Javadoc, shows <em>all</em> methods, not just lifecycle methods) </p>
+<p class="puzzletitletoc"> 6.8 <a href="listings/LifecycleWebServer.java">Web server with shutdown support.</a> </p>
+<p class="puzzletitletoc"> 6.9 <a href="listings/OutOfTime.java">Class illustrating confusing Timer behavior.</a> </p>
+<p class="puzzletitletoc"> 6.10 <a href="listings/SingleThreadRenderer.java">Rendering page elements sequentially.</a> </p>
+<p class="puzzletitletoc"> 6.11 <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/concurrent/Callable.html#method_summary">
+                                  Callable</a>
+                                and <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/concurrent/Future.html#method_summary">
+                                  Future</a> interfaces.
+                                (external links to Javadoc) </p>
+<p class="puzzletitletoc"> 6.12 Default implementation of newTaskFor in ThreadPoolExecutor. (See JDK source) </p>
+<p class="puzzletitletoc"> 6.13 <a href="listings/FutureRenderer.java">Waiting for image download with Future.</a> </p>
+<p class="puzzletitletoc"> 6.14 QueueingFuture class used by ExecutorCompletionService. (See JDK source) </p>
+<p class="puzzletitletoc"> 6.15 <a href="listings/Renderer.java">Using CompletionService to render page elements as they become available.</a></p>
+<p class="puzzletitletoc"> 6.16 <a href="listings/RenderWithTimeBudget.java">Fetching an advertisement with a time budget.</a> </p>
+<p class="puzzletitletoc"> 6.17 <a href="listings/TimeBudget.java">Requesting travel quotes under a time budget.</a> </p>
+
+<p class="ChapTOC">Cancellation and Shutdown</p>
+
+<p class="puzzletitletoc"> 7.1 <a href="listings/PrimeGenerator.java">Using a volatile field to hold cancellation state.</a> </p>
+<p class="puzzletitletoc"> 7.2 <a href="listings/PrimeGenerator.java">Generating a second's worth of prime numbers.</a> </p>
+<p class="puzzletitletoc"> 7.3 <a href="listings/BrokenPrimeProducer.java">Unreliable cancellation that can leave producers stuck in a blocking operation.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc"> 7.4 <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html#method_summary">
+                                 Interruption methods in Thread.</a>
+                               (external link to Javadoc, shows <em>all</em> <tt>Thread</tt> methods, not just interruption-related) </p>
+<p class="puzzletitletoc"> 7.5 <a href="listings/PrimeProducer.java">Using interruption for cancellation.</a> </p>
+<p class="puzzletitletoc"> 7.6 Propagating InterruptedException to callers. (fragment) </p>
+<p class="puzzletitletoc"> 7.7 <a href="listings/NoncancelableTask.java">Noncancelable task that restores interruption before exit.</a> </p>
+<p class="puzzletitletoc"> 7.8 <a href="listings/TimedRun1.java">Scheduling an interrupt on a borrowed thread.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc"> 7.9 <a href="listings/TimedRun2.java">Interrupting a task in a dedicated thread.</a> </p>
+<p class="puzzletitletoc"> 7.10 <a href="listings/TimedRun.java">Cancelling a task using Future.</a> </p>
+<p class="puzzletitletoc"> 7.11 <a href="listings/ReaderThread.java">Encapsulating nonstandard cancellation in a Thread by overriding interrupt.</a> </p>
+<p class="puzzletitletoc"> 7.12 <a href="listings/SocketUsingTask.java">Encapsulating nonstandard cancellation in a task with newTaskFor. </a> </p>
+<p class="puzzletitletoc"> 7.13 <a href="listings/LogWriter.java">Producer-consumer logging service with no shutdown support.</a> </p>
+<p class="puzzletitletoc"> 7.14 Unreliable way to add shutdown support to the logging service. (fragment) </p>
+<p class="puzzletitletoc"> 7.15 <a href="listings/LogService.java">Adding reliable cancellation to LogWriter.</a> </p>
+<p class="puzzletitletoc"> 7.16 Logging service that uses an ExecutorService. </p>
+<p class="puzzletitletoc"> 7.17 <a href="listings/IndexingService.java">Shutdown with poison pill.</a> </p>
+<p class="puzzletitletoc"> 7.18 <a href="listings/IndexingService.java">Producer thread for IndexingService.</a> </p>
+<p class="puzzletitletoc"> 7.19 <a href="listings/IndexingService.java">Consumer thread for IndexingService.</a> </p>
+<p class="puzzletitletoc"> 7.20 <a href="listings/CheckForMail.java">Using a private Executor whose lifetime is bounded by a method call.</a> </p>
+<p class="puzzletitletoc"> 7.21 <a href="listings/TrackingExecutor.java">ExecutorService that keeps track of cancelled tasks after shutdown.</a> </p>
+<p class="puzzletitletoc"> 7.22 <a href="listings/WebCrawler.java">Using TrackingExecutorService to save unfinished tasks for later execution.</a> </p>
+<p class="puzzletitletoc"> 7.23 Typical thread-pool worker thread structure. (fragment) </p>
+<p class="puzzletitletoc"> 7.24 <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.UncaughtExceptionHandler.html#method_summary">
+                                  UncaughtExceptionHandler interface.</a>
+                                (external link to Javadoc) </p>
+<p class="puzzletitletoc"> 7.25 <a href="listings/UEHLogger.java">UncaughtExceptionHandler that logs the exception.</a> </p>
+<p class="puzzletitletoc"> 7.26 Registering a shutdown hook to stop the logging service. (fragment) </p>
+
+<p class="ChapTOC">Applying Thread Pools</p>
+
+<p class="puzzletitletoc"> 8.1 <a href="listings/ThreadDeadlock.java">Task that deadlocks in a single-threaded Executor.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc"> 8.2 <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/concurrent/ThreadPoolExecutor.html#ThreadPoolExecutor(int,%20int,%20long,%20java.util.concurrent.TimeUnit,%20java.util.concurrent.BlockingQueue,%20java.util.concurrent.ThreadFactory,%20java.util.concurrent.RejectedExecutionHandler)">
+                                 General constructor for ThreadPoolExecutor.</a>
+                               (external link to Javadoc) </p>
+<p class="puzzletitletoc"> 8.3 Creating a fixed-sized thread pool with a bounded queue and the caller-runs saturation policy. (fragment) </p>
+<p class="puzzletitletoc"> 8.4 <a href="listings/BoundedExecutor.java">Using a Semaphore to throttle task submission.</a> </p>
+<p class="puzzletitletoc"> 8.5 <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/concurrent/ThreadFactory.html#method_summary">
+                                 ThreadFactory interface.</a>
+                               (external link to Javadoc) </p>
+<p class="puzzletitletoc"> 8.6 <a href="listings/MyThreadFactory.java">Custom thread factory.</a> </p>
+<p class="puzzletitletoc"> 8.7 <a href="listings/MyAppThread.java">Custom thread base class.</a> </p>
+<p class="puzzletitletoc"> 8.8 Modifying an Executor created with the standard factories. (fragment) </p>
+<p class="puzzletitletoc"> 8.9 <a href="listings/TimingThreadPool.java">Thread pool extended with logging and timing.</a> </p>
+<p class="puzzletitletoc"> 8.10 <a href="listings/TransformingSequential.java">Transforming sequential execution into parallel execution.</a> </p>
+<p class="puzzletitletoc"> 8.11 <a href="listings/TransformingSequential.java">Transforming sequential tail-recursion into parallelized recursion.</a> </p>
+<p class="puzzletitletoc"> 8.12 <a href="listings/TransformingSequential.java">Waiting for results to be calculated in parallel.</a> </p>
+<p class="puzzletitletoc"> 8.13 <a href="listings/Puzzle.java">Abstraction for puzzles like the 'sliding blocks puzzle'.</a> </p>
+<p class="puzzletitletoc"> 8.14 <a href="listings/PuzzleNode.java">Link node for the puzzle solver framework.</a> </p>
+<p class="puzzletitletoc"> 8.15 <a href="listings/SequentialPuzzleSolver.java">Sequential puzzle solver.</a> </p>
+<p class="puzzletitletoc"> 8.16 <a href="listings/ConcurrentPuzzleSolver.java">Concurrent version of puzzle solver.</a> </p>
+<p class="puzzletitletoc"> 8.17 <a href="listings/ValueLatch.java">Result-bearing latch used by ConcurrentPuzzleSolver.</a> </p>
+<p class="puzzletitletoc"> 8.18 <a href="listings/PuzzleSolver.java">Solver that recognizes when no solution exists.</a> </p>
+
+<p class="ChapTOC">GUI Applications</p>
+
+<p class="puzzletitletoc"> 9.1 <a href="listings/SwingUtilities.java">Implementing SwingUtilities using an Executor.</a> </p>
+<p class="puzzletitletoc"> 9.2 <a href="listings/GuiExecutor.java">Executor built atop SwingUtilities.</a> </p>
+<p class="puzzletitletoc"> 9.3 Simple event listener. (fragment) </p>
+<p class="puzzletitletoc"> 9.4 <a href="listings/ListenerExamples.java">Binding a long-running task to a visual component.</a> </p>
+<p class="puzzletitletoc"> 9.5 <a href="listings/ListenerExamples.java">Long-running task with user feedback.</a> </p>
+<p class="puzzletitletoc"> 9.6 <a href="listings/ListenerExamples.java">Cancelling a long-running task.</a> </p>
+<p class="puzzletitletoc"> 9.7 <a href="listings/BackgroundTask.java">Background task class supporting cancellation, completion notification, and progress notification.</a> </p>
+<p class="puzzletitletoc"> 9.8 <a href="listings/ListenerExamples.java">Initiating a long-running, cancellable task with BackgroundTask.</a> </p>
+
+<p class="ChapTOC">Avoiding Liveness Hazards</p>
+
+<p class="puzzletitletoc"> 10.1 <a href="listings/LeftRightDeadlock.java">Simple lock-ordering deadlock.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc"> 10.2 <a href="listings/DynamicOrderDeadlock.java">Dynamic lock-ordering deadlock.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc"> 10.3 <a href="listings/InduceLockOrder.java">Inducing a lock ordering to avoid deadlock.</a> </p>
+<p class="puzzletitletoc"> 10.4 <a href="listings/DemonstrateDeadlock.java">Driver loop that induces deadlock under typical conditions.</a> </p>
+<p class="puzzletitletoc"> 10.5 <a href="listings/CooperatingDeadlock.java">Lock-ordering deadlock between cooperating objects.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc"> 10.6 <a href="listings/CooperatingNoDeadlock.java">Using open calls to avoiding deadlock between cooperating objects.</a> </p>
+<p class="puzzletitletoc"> 10.7 Portion of thread dump after deadlock. (not a code listing) </p>
+
+<p class="ChapTOC">Performance and Scalability</p>
+
+<p class="puzzletitletoc"> 11.1 <a href="listings/WorkerThread.java">Serialized access to a task queue.</a> </p>
+<p class="puzzletitletoc"> 11.2 Synchronization that has no effect. <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> (fragment) </p>
+<p class="puzzletitletoc"> 11.3 <a href="listings/ThreeStooges.java">Candidate for lock elision.</a> </p>
+<p class="puzzletitletoc"> 11.4 <a href="listings/AttributeStore.java">Holding a lock longer than necessary.</a> </p>
+<p class="puzzletitletoc"> 11.5 <a href="listings/BetterAttributeStore.java">Reducing lock duration.</a> </p>
+<p class="puzzletitletoc"> 11.6 <a href="listings/ServerStatusBeforeSplit.java">Candidate for lock splitting.</a> </p>
+<p class="puzzletitletoc"> 11.7 <a href="listings/ServerStatusAfterSplit.java">ServerStatus refactored to use split locks.</a> </p>
+<p class="puzzletitletoc"> 11.8 <a href="listings/StripedMap.java">Hash-based map using lock striping.</a> </p>
+
+<p class="ChapTOC">Testing Concurrent Programs</p>
+
+<p class="puzzletitletoc"> 12.1 <a href="listings/SemaphoreBoundedBuffer.java">Bounded buffer using Semaphore.</a> </p>
+<p class="puzzletitletoc"> 12.2 <a href="listings/TestBoundedBuffer.java">Basic unit tests for BoundedBuffer.</a> </p>
+<p class="puzzletitletoc"> 12.3 <a href="listings/TestBoundedBuffer.java">Testing blocking and responsiveness to interruption.</a> </p>
+<p class="puzzletitletoc"> 12.4 <a href="listings/XorShift.java">Medium-quality random number generator suitable for testing.</a> </p>
+<p class="puzzletitletoc"> 12.5 <a href="listings/PutTakeTest.java">Producer-consumer test program for BoundedBuffer.</a> </p>
+<p class="puzzletitletoc"> 12.6 <a href="listings/PutTakeTest.java">Producer and consumer classes used in PutTakeTest.</a> </p>
+<p class="puzzletitletoc"> 12.7 <a href="listings/TestBoundedBuffer.java">Testing for resource leaks.</a> </p>
+<p class="puzzletitletoc"> 12.8 <a href="listings/TestThreadPool.java">Thread factory for testing ThreadPoolExecutor.</a> </p>
+<p class="puzzletitletoc"> 12.9 <a href="listings/TestThreadPool.java">Test method to verify thread pool expansion.</a> </p>
+<p class="puzzletitletoc"> 12.10 Using Thread.yield to generate more interleavings. (fragment) </p>
+<p class="puzzletitletoc"> 12.11 <a href="listings/BarrierTimer.java">Barrier-based timer.</a> </p>
+<p class="puzzletitletoc"> 12.12 <a href="listings/TimedPutTakeTest.java">Testing with a barrier-based timer.</a> </p>
+<p class="puzzletitletoc"> 12.13 <a href="listings/TimedPutTakeTest.java">Driver program for TimedPutTakeTest.</a> </p>
+
+<p class="ChapTOC">Explicit Locks</p>
+
+<p class="puzzletitletoc"> 13.1 <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/concurrent/locks/Lock.html#method_summary">
+                                  Lock interface.</a>
+                                (external link to Javadoc) </p>
+<p class="puzzletitletoc"> 13.2 Guarding object state using ReentrantLock. (fragment) </p>
+<p class="puzzletitletoc"> 13.3 <a href="listings/DeadlockAvoidance.java">Avoiding lock-ordering deadlock using try Lock.</a> </p>
+<p class="puzzletitletoc"> 13.4 <a href="listings/TimedLocking.java">Locking with a time budget.</a> </p>
+<p class="puzzletitletoc"> 13.5 <a href="listings/InterruptibleLocking.java">Interruptible lock acquisition.</a> </p>
+<p class="puzzletitletoc"> 13.6 <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/concurrent/locks/ReadWriteLock.html#method_summary">
+                                  ReadWriteLock interface.</a>
+                                (external link to Javadoc) </p>
+<p class="puzzletitletoc"> 13.7 <a href="listings/ReadWriteMap.java">Wrapping a Map with a read-write lock.</a> </p>
+
+<p class="ChapTOC">Building Custom Synchronizers</p>
+
+<p class="puzzletitletoc"> 14.1 Structure of blocking state-dependent actions. (fragment) </p>
+<p class="puzzletitletoc"> 14.2 <a href="listings/BaseBoundedBuffer.java">Base class for bounded buffer implementations.</a> </p>
+<p class="puzzletitletoc"> 14.3 <a href="listings/GrumpyBoundedBuffer.java">Bounded buffer that balks when preconditions are not met.</a> </p>
+<p class="puzzletitletoc"> 14.4 <a href="listings/GrumpyBoundedBuffer.java">Client logic for calling GrumpyBoundedBuffer.</a> </p>
+<p class="puzzletitletoc"> 14.5 <a href="listings/SleepyBoundedBuffer.java">Bounded buffer using crude blocking.</a> </p>
+<p class="puzzletitletoc"> 14.6 <a href="listings/BoundedBuffer.java">Bounded buffer using condition queues.</a> </p>
+<p class="puzzletitletoc"> 14.7 Canonical form for state-dependent methods. (fragment) </p>
+<p class="puzzletitletoc"> 14.8 <a href="listings/BoundedBuffer.java">Using conditional notification in BoundedBuffer.put.</a> </p>
+<p class="puzzletitletoc"> 14.9 <a href="listings/ThreadGate.java">Recloseable gate using wait and notifyAll.</a> </p>
+<p class="puzzletitletoc"> 14.10 <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/concurrent/locks/Condition.html#method_summary">
+                                   Condition interface.</a>
+                                 (external link to Javadoc) </p>
+<p class="puzzletitletoc"> 14.11 <a href="listings/ConditionBoundedBuffer.java">Bounded buffer using explicit condition variables.</a> </p>
+<p class="puzzletitletoc"> 14.12 <a href="listings/SemaphoreOnLock.java">Counting semaphore implemented using Lock.</a> </p>
+<p class="puzzletitletoc"> 14.13 Canonical forms for acquisition and release in AQS. (fragment) </p>
+<p class="puzzletitletoc"> 14.14 <a href="listings/OneShotLatch.java">Binary latch using AbstractQueuedSynchronizer.</a> </p>
+<p class="puzzletitletoc"> 14.15 tryAcquire implementation from nonfairReentrantLock. (See JDK source) </p>
+<p class="puzzletitletoc"> 14.16 tryAcquireShared and tryReleaseShared from Semaphore. (See JDK source) </p>
+
+<p class="ChapTOC">Atomic Variables and Nonblocking Synchronization</p>
+
+<p class="puzzletitletoc"> 15.1 <a href="listings/SimulatedCAS.java">Simulated CAS operation.</a> </p>
+<p class="puzzletitletoc"> 15.2 <a href="listings/CasCounter.java">Nonblocking counter using CAS.</a> </p>
+<p class="puzzletitletoc"> 15.3 <a href="listings/CasNumberRange.java">Preserving multivariable invariants using CAS.</a> </p>
+<p class="puzzletitletoc"> 15.4 <a href="listings/ReentrantLockPseudoRandom.java">Random number generator using ReentrantLock.</a> </p>
+<p class="puzzletitletoc"> 15.5 <a href="listings/AtomicPseudoRandom.java">Random number generator using AtomicInteger.</a> </p>
+<p class="puzzletitletoc"> 15.6 <a href="listings/ConcurrentStack.java">Nonblocking stack using Treiber's algorithm.</a> </p>
+<p class="puzzletitletoc"> 15.7 <a href="listings/LinkedQueue.java">Insertion in the Michael-Scott nonblocking queue algorithm.</a> </p>
+<p class="puzzletitletoc"> 15.8 Using atomic field updaters in ConcurrentLinkedQueue. (fragment) </p>
+
+<p class="ChapTOC">The Java Memory Model</p>
+
+<p class="puzzletitletoc"> 16.1 <a href="listings/PossibleReordering.java">Insufficiently synchronized program that can have surprising results.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc"> 16.2 Inner class of FutureTask illustrating synchronization piggybacking. (See JDK source) </p>
+<p class="puzzletitletoc"> 16.3 <a href="listings/UnsafeLazyInitialization.java">Unsafe lazy initialization.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc"> 16.4 <a href="listings/SafeLazyInitialization.java">Thread-safe lazy initialization.</a> </p>
+<p class="puzzletitletoc"> 16.5 <a href="listings/EagerInitialization.java">Eager initialization.</a> </p>
+<p class="puzzletitletoc"> 16.6 <a href="listings/ResourceFactory.java">Lazy initialization holder class idiom.</a> </p>
+<p class="puzzletitletoc"> 16.7 <a href="listings/DoubleCheckedLocking.java">Double-checked-locking antipattern.</a> <img src="images/mryuk.gif" alt="(bad)" height="20" width="20" /> </p>
+<p class="puzzletitletoc"> 16.8 <a href="listings/SafeStates.java">Initialization safety for immutable objects.</a> </p>
+
+</body>
+</html>
