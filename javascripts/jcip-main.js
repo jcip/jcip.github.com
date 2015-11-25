@@ -9,10 +9,10 @@ $(function() {
             $(aSelector).addClass('disabled');
         }
     }
-    $('header.navbar').load('/include/jcip-header.html', function() {
+    $('header.navbar').load('include/jcip-header.html', function() {
         initLink("faq.html", "faq-link");
     });
-    $('.footer').load('/include/jcip-footer.html', function() {
+    $('.footer').load('include/jcip-footer.html', function() {
         initLink("authors.html", "author-link");
     });
 });
