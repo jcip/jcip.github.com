@@ -28,6 +28,11 @@
       ga('create', 'UA-38133818-1', 'auto');
       ga('send', 'pageview');
     </script>
+    <style>
+      td:nth-of-type(1):before {
+        content: "p.";
+      }
+    </style>
   </head>
 
   <body role="document">
@@ -149,8 +154,8 @@
                              uniform waiter requirement for using <tt>notifyAll</tt>", it should be <tt>notify</tt>, not
                              <tt>notifyAll</tt>. </td> </tr>
 
-        <tr> <td>340</td>  In Figure 16.1, <tt>y=b</tt> should be <tt>x=b</tt> in Thread A, and <tt>x=a</tt>
-                             should be <tt>y=a</tt> in Thread B. </li>
+        <tr> <td>340</td> <td>In Figure 16.1, <tt>y=b</tt> should be <tt>x=b</tt> in Thread A, and <tt>x=a</tt>
+                             should be <tt>y=a</tt> in Thread B. </td>
                              <td>Will McQueen</td> </tr>
 
         <tr> <td>345</td> <td> The reference in the second paragraph to "Figure 16.3" should be "Listing 16.3".</td>
