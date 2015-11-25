@@ -28,11 +28,6 @@
       ga('create', 'UA-38133818-1', 'auto');
       ga('send', 'pageview');
     </script>
-    <style>
-      td:nth-of-type(1):before {
-        content: "p.";
-      }
-    </style>
   </head>
 
   <body role="document">
@@ -102,7 +97,7 @@
                         var item = data[i],
                             pageCell = '<td>' + item.pages + '</td>',
                             descriptionCell = '<td>' + item.description + '</td>',
-                            reporterCell = item.reporter ? ('<td>' + item.reporter + '</td>') : '<td></td>'
+                            reporterCell = item.reporter ? ('<td>' + item.reporter + '</td>') : '<td></td>',
                             newRow = '<tr>' + pageCell + descriptionCell + reporterCell + '</tr>'
                             ;
                         $('tbody').after(newRow);
