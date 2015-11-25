@@ -67,7 +67,7 @@
   reporter: Joe Bowbeer
 -
   pages: 130
-  reporter: In Listing 6.15, <tt>info</tt> is superfluously marked <tt>final</tt>.
+  description: In Listing 6.15, <tt>info</tt> is superfluously marked <tt>final</tt>.
 -
   pages: 148
   description: 
@@ -140,7 +140,7 @@
     be <tt>&gt;=</tt> (<em>greater-than-or-equals</em>), not <tt>&lt;</tt> (<em>less-than</em>).
 -
   pages: 292
-  reporter: In Listing 14.1, should have <tt>release lock</tt> after <tt>perform action</tt>.
+  description: In Listing 14.1, should have <tt>release lock</tt> after <tt>perform action</tt>.
 -
   pages: 301
   description: In the fifth bullet item in the middle of the page, "the the" should be "the".
