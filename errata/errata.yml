@@ -119,7 +119,7 @@
     (The synchronized block in its body is correct, however.)
 -
   pages: 239
-  description: Section 11.4.5, second paragraph, fourth line: "excusively" should be "exclusively".
+  description: 'Section 11.4.5, second paragraph, fourth line: "excusively" should be "exclusively".'
   reporter: Alexei Nekrassov
 -
   pages: 259
