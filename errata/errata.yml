@@ -20,8 +20,7 @@
   reporter: Mike Fikes
 -
   pages: 53
-  description: 
-    "when shared a Date" should be "when sharing a Date".
+  description: The phrase "when shared a Date" should be "when sharing a Date".
   reporter: Martin Buchholz
 -
   pages: 62
