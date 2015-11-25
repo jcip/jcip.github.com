@@ -92,10 +92,13 @@
         $(function() {
             $.get("errata/errata.yml").done(function(yamlData) {
                 console.log("File load complete");
-                console.log(yamlData);
-                var data = jsyaml.load(yamlData);
-                var jsonString = JSON.stringify(data);
-                console.log(jsonString);
+                try {
+                    var data = jsyaml.load(yamlData);
+                    console.log("Successfully parsed errata");
+                } catch (exception) {
+                    console.log("Exception loading errata: " + exception);
+                }
+
             });
         });
     </script>
