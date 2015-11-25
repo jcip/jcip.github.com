@@ -127,7 +127,7 @@
   reporter: Tomohiro Takahashi
 -
   pages: 265
-  description: last paragraph, 1st sentence: "fair semaphores provides" should be "fair semaphores provide".
+  description: 'last paragraph, 1st sentence: "fair semaphores provides" should be "fair semaphores provide".'
   reporter: Detlef Morgenstern
 -
   pages: 269
