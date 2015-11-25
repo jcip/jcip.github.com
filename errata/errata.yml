@@ -1,0 +1,163 @@
+-
+  pages: 6
+  description: In Figure 1.1, <tt>nextValue</tt> should be <tt>getNext</tt>.
+  reporter: Jaime Nino
+-
+  pages: 6
+  description: In the first paragraph, <tt>nextValue++</tt> should be <tt>value++</tt>.
+  reporter: Jaime Nino
+-
+  pages: 7
+  description: In the second paragraph, <tt>nextValue</tt> should be <tt>getNext</tt>.
+  reporter: Jaime Nino
+-
+  pages: 7
+  description: In Listing 1.2, <tt>nextValue</tt> should be <tt>value</tt> (to be consistent with Listing 1.1).
+  reporter: Jaime Nino
+-
+  pages: 34
+  description: In the last sentence, the reference to <tt>done</tt> should be to <tt>ready</tt>.
+  reporter: Mike Fikes
+-
+  pages: 53
+  description: "when shared a Date" should "when sharing a Date".
+  reporter: Martin Buchholz
+-
+  pages: 62
+  description: In the last paragraph before section 4.3, "getLocation" should be "getLocations".
+  reporter: Thomas Strohmann
+-
+  pages: 68
+  description: The last word of the first paragraph should be "variables", not "varaibles".
+  reporter: Vesa Hiltunen
+-
+  pages: 69
+  description: In Listing 4.11, the two-arg constructor body should be simply "this.set(x, y)".
+  reporter: Friedrich Esser
+-
+  pages: 74
+  description: 
+    In Listing 4.16, "if (contains)" should be "if (!contains)". The entire example would
+    be better expressed using a local variable "absent", as in the previous two listings.
+  reporter: Milan Fort
+-
+  pages: 74
+  description: In the call-out at the bottom of the page, "synchronization" is missing an "r".
+  reporter: David Holmes
+-
+  pages: 81
+  description: In Figure 5.1, the threads are mislabeled: <tt>A</tt> and <tt>B</tt> should be exchanged.
+  reporter: David Biesack
+-
+  pages: 84
+  description: In the first paragraph, "collections are arguments" should be "collections as arguments".
+  reporter: Alexei Nekrassov
+-
+  pages: 89
+  description: In the last line, "DiskCrawler" should be "FileCrawler".
+  reporter: Polson Keeratibumrungpong and independently by Sascha Kratky
+-
+  pages: 121
+  description: 
+    In the last paragraph,
+    "Tasks submitted to an <tt>ExecutorService</tt> after it has been shut down are
+    handled by the <em>rejected execution handler</em> (see Section 8.3.3)" is too general.
+    Rejected execution handling is provided specifically by <tt>ThreadPoolExecutor</tt>, an
+    implementation of <tt>ExecutorService</tt>, not by <tt>ExecutorService</tt> itself.
+  reporter: Joe Bowbeer
+-
+  pages: 130
+  reporter: In Listing 6.15, <tt>info</tt> is superfluously marked <tt>final</tt>.
+-
+  pages: 148
+  description: 
+    In <em>Asynchronous I/O with Selector</em>, it is the <tt>close</tt> method that causes
+    <tt>select</tt> to return prematurely by throwing <tt>ClosedSelectedException</tt>,
+    not the <tt>wakeup</tt> method.
+  reporter: Matthias Ernst
+-
+  pages: 153
+  description: In the second paragraph, "satifying" should be "satisfying".
+  reporter: Tyler Hammond
+-
+  pages: 154
+  description: 
+    In Listing 7.15, the last two <tt>synchronized (this)</tt> lines should read
+    <tt>synchronized (LogService.this)</tt>.
+  reporter: Tom Hawtin
+-
+  pages: 172
+  description: In footnote 3, "core size of zero" should be "non-zero core size".
+  reporter: Mike Fikes
+-
+  pages: 179
+  description: In the first sentence of Section 8.4, <tt>terminate</tt> should be <tt>terminated</tt>.
+  reporter: Tom White
+-
+  pages: 197
+  description: 
+    In Listing 9.6, the first instance of <tt>runningTask != null</tt> should
+    be <tt>runningTask == null</tt>.
+  reporter: Chris Heisterkamp
+-
+  pages: 197
+  description: 
+    In Listing 9.6, <tt>Thread.currentThread().isInterrupted()</tt> should be
+    <tt>Thread.interrupted()</tt>.
+  reporter: David Holmes
+-
+  pages: 200
+  description: 
+    In Listing 9.8, the argument to <tt>backgroundExec.execute</tt> should be
+    <tt>listener.task</tt> rather than just <tt>task</tt>, and the first and last lines
+    of the listing should be deleted.
+  reporter: Stephen Morring
+-
+  pages: 214
+  description: 
+    In Listing 10.6, <tt>Taxi.setLocation</tt> should not be a synchronized method.
+    (The synchronized block in its body is correct, however.)
+-
+  pages: 239
+  description: Section 11.4.5, second paragraph, fourth line: "excusively" should be "exclusively".
+  reporter: Alexei Nekrassov
+-
+  pages: 259
+  description: In Listing 12.9, the call to newFixedThreadPool should have another argument, "threadFactory".
+  reporter: Tomohiro Takahashi
+-
+  pages: 265
+  description: last paragraph, 1st sentence: "fair semaphores provides" should be "fair semaphores provide".
+  reporter: Detlef Morgenstern
+-
+  pages: 269
+  description: 2nd paragraph, 2nd sentence: "the" is repeated in "If the the work..."
+  reporter: Alexei Nekrassov
+-
+  pages: 280
+  description: 
+    In Listing 13.3, the relational operator in the 5th line from the bottom should
+    be <tt>&gt;=</tt> (<em>greater-than-or-equals</em>), not <tt>&lt;</tt> (<em>less-than</em>).
+-
+  pages: 292
+  reporter: In Listing 14.1, should have <tt>release lock</tt> after <tt>perform action</tt>.
+-
+  pages: 301
+  description: In the fifth bullet item in the middle of the page, "the the" should be "the".
+  reporter: Glyn Normington
+-
+  pages: 307
+  description: 
+    In the first paragraph, "Both of these factors make it impossible to enforce the
+    uniform waiter requirement for using <tt>notifyAll</tt>", it should be <tt>notify</tt>, not
+    <tt>notifyAll</tt>.
+-
+  pages: 340
+  description: 
+    In Figure 16.1, <tt>y=b</tt> should be <tt>x=b</tt> in Thread A, and <tt>x=a</tt>
+    should be <tt>y=a</tt> in Thread B.
+  reporter: Will McQueen
+-
+  pages: 345
+  description:  The reference in the second paragraph to "Figure 16.3" should be "Listing 16.3".
+  reporter: Glyn Normington
