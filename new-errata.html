@@ -93,11 +93,14 @@
             $.get("errata/errata.yml").done(function(yamlData) {
                 console.log("File load complete");
                 try {
-                    var data = jsyaml.load(yamlData);
+                    var data = jsyaml.load(yamlData),
+                        len = data.length;
+
                     console.log("Successfully parsed errata");
 
-                    for (item in data) {
-                        var pageCell = '<td>' + item.pages + '</td>',
+                    for (var i = 0; i < len; ++i) {
+                        var item = data[i],
+                            pageCell = '<td>' + item.pages + '</td>',
                             descriptionCell = '<td>' + item.description + '</td>',
                             reporterCell = item.reporter ? ('<td>' + item.reporter + '</td>') : '<td></td>'
                             newRow = '<tr>' + pageCell + descriptionCell + reporterCell + '</tr>'
