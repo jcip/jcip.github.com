@@ -100,7 +100,7 @@
                             reporterCell = item.reporter ? ('<td>' + item.reporter + '</td>') : '<td></td>',
                             newRow = '<tr>' + pageCell + descriptionCell + reporterCell + '</tr>'
                             ;
-                        $('tbody').after(newRow);
+                        $('tbody').append(newRow);
                     }
                 } catch (exception) {
                     console.log("Exception loading errata: " + exception);
