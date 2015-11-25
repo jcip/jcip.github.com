@@ -96,7 +96,8 @@
                 console.log("File load complete");
                 try {
                     var data = jsyaml.load(yamlData),
-                        len = data.length;
+                        len = data.length,
+                        tbody = $('<tbody></tbody>');
 
                     console.log("Successfully parsed errata");
 
@@ -107,8 +108,12 @@
                             reporterCell = '', //item.reporter ? ('<td>' + item.reporter + '</td>') : '<td></td>',
                             newRow = '<tr>' + pageCell + descriptionCell + reporterCell + '</tr>'
                             ;
-                        $('tbody').append(newRow);
+                        // This is inefficient, but not important for such a small set.
+                        tbody.append(newRow);
                     }
+
+                    $('tbody').replaceWith(tbody);
+
                 } catch (exception) {
                     console.log("Exception loading errata: " + exception);
                 }
