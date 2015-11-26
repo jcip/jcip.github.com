@@ -158,6 +158,6 @@
     should be <tt>y=a</tt> in Thread B.
   reporter: Will McQueen
 -
-  pages: 345-346
+  pages: 345
   description:  The reference in the second paragraph to "Figure 16.3" should be "Listing 16.3".
   reporter: Glyn Normington
