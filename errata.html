@@ -105,8 +105,8 @@
                     console.log("Successfully parsed errata");
 
                     for (var i = 0; i < len; ++i) {
-                        var item = data[i];
-                        var pageSplit = item.pages.split('-'),
+                        var item = data[i],
+                            pageSplit = ('' + item.pages).split('-'),
                             pageJoin = pageSplit.join("&ndash"),
                             pageClass = pageSplit.length == 1 ? "p" : "pp",
                             pageCell = '<td class="' + pageClass + '">' + pageJoin + '</td>',
