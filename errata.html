@@ -49,7 +49,7 @@
         <h1>Errata</h1>
       </div>
 
-      <table class="table table-striped table-condensed">
+      <table class="table table-striped table-condensed hidden">
 
         <thead>
           <tr>
@@ -118,6 +118,7 @@
                     }
 
                     $('tbody').replaceWith(tbody);
+                    $('table').removeClass('hidden');
 
                 } catch (exception) {
                     console.log("Exception loading errata: " + exception);
