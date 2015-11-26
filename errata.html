@@ -107,7 +107,7 @@
                     for (var i = 0; i < len; ++i) {
                         var item = data[i],
                             pageSplit = ('' + item.pages).split('-'),
-                            pageJoin = pageSplit.join("&ndash"),
+                            pageJoin = pageSplit.join("&ndash;"),
                             pageClass = pageSplit.length == 1 ? "p" : "pp",
                             pageCell = '<td class="' + pageClass + '">' + pageJoin + '</td>',
                             descriptionCell = '<td>' + item.description + '</td>',
