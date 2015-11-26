@@ -105,6 +105,9 @@
                     console.log("Successfully parsed errata");
 
                     for (var i = 0; i < len; ++i) {
+                        if (!data[i]) {
+                            continue;
+                        }
                         var item = data[i],
                             pages = item.pages,
                             pageSplit = pages.split('-'),
