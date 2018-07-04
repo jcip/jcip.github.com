@@ -47,7 +47,7 @@
   reporter: David Holmes
 -
   pages: 81
-  description: "In Figure 5.1, the threads are mislabeled: <tt>A</tt> and <tt>B</tt> should be exchanged." (Fixed in 6th printing.) 
+  description: "In Figure 5.1, the threads are mislabeled: <tt>A</tt> and <tt>B</tt> should be exchanged. (Fixed in 6th printing.)"
   reporter: David Biesack
 -
   pages: 84
