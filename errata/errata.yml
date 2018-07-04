@@ -100,12 +100,14 @@
     In Listing 9.6, the first instance of <tt>runningTask != null</tt> should
     be <tt>runningTask == null</tt>. <em>(Fixed in 6th printing.)</em>
   reporter: Chris Heisterkamp
--
-  pages: 197
-  description: 
-    In Listing 9.6, <tt>Thread.currentThread().isInterrupted()</tt> should be
-    <tt>Thread.interrupted()</tt>.
-  reporter: David Holmes
+# We believe it doesn't matter whether the interrupt is cleared. It's up to the
+# executor service implementation to handle this.
+#-
+#  pages: 197
+#  description:
+#    In Listing 9.6, <tt>Thread.currentThread().isInterrupted()</tt> should be
+#    <tt>Thread.interrupted()</tt>.
+#  reporter: David Holmes
 -
   pages: 200
   description: 
