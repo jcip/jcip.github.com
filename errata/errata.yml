@@ -1,26 +1,26 @@
 -
   pages: 6
-  description: In Figure 1.1, <tt>nextValue</tt> should be <tt>getNext</tt>. <it>(Fixed in 6th printing.)</it>
+  description: In Figure 1.1, <tt>nextValue</tt> should be <tt>getNext</tt>. <em>(Fixed in 6th printing.)</em>
   reporter: Jaime Nino
 -
   pages: 6
-  description: In the first paragraph, <tt>nextValue++</tt> should be <tt>value++</tt>. <it>(Fixed in 6th printing.)</it>
+  description: In the first paragraph, <tt>nextValue++</tt> should be <tt>value++</tt>. <em>(Fixed in 6th printing.)</em>
   reporter: Jaime Nino
 -
   pages: 7
-  description: In the second paragraph, <tt>nextValue</tt> should be <tt>getNext</tt>. <it>(Fixed in 6th printing.)</it>
+  description: In the second paragraph, <tt>nextValue</tt> should be <tt>getNext</tt>. <em>(Fixed in 6th printing.)</em>
   reporter: Jaime Nino
 -
   pages: 7
-  description: In Listing 1.2, <tt>nextValue</tt> should be <tt>value</tt> (to be consistent with Listing 1.1). <it>(Fixed in 6th printing.)</it>
+  description: In Listing 1.2, <tt>nextValue</tt> should be <tt>value</tt> (to be consistent with Listing 1.1). <em>(Fixed in 6th printing.)</em>
   reporter: Jaime Nino
 -
   pages: 34
-  description: In the last sentence, the reference to <tt>done</tt> should be to <tt>ready</tt>. <it>(Fixed in 6th printing.)</it>
+  description: In the last sentence, the reference to <tt>done</tt> should be to <tt>ready</tt>. <em>(Fixed in 6th printing.)</em>
   reporter: Mike Fikes
 -
   pages: 53
-  description: The phrase "when shared a Date" should be "when sharing a Date". <it>(Fixed in 6th printing.)</it>
+  description: The phrase "when shared a Date" should be "when sharing a Date". <em>(Fixed in 6th printing.)</em>
   reporter: Martin Buchholz
 -
   pages: 62
@@ -28,7 +28,7 @@
   reporter: Thomas Strohmann
 -
   pages: 68
-  description: The last word of the first paragraph should be "variables", not "varaibles". <it>(Fixed in 6th printing.)</it>
+  description: The last word of the first paragraph should be "variables", not "varaibles". <em>(Fixed in 6th printing.)</em>
   reporter: Vesa Hiltunen
 -
   pages: 69
@@ -39,19 +39,19 @@
   description: 
     In Listing 4.16, "if (contains)" should be "if (!contains)". The entire example would
     be better expressed using a local variable "absent", as in the previous two listings.
-    <it>(Fixed in 6th printing.)</it>
+    <em>(Fixed in 6th printing.)</em>
   reporter: Milan Fort
 -
   pages: 74
-  description: In the call-out at the bottom of the page, "synchronization" is missing an "r". <it>(Fixed in 6th printing.)</it>
+  description: In the call-out at the bottom of the page, "synchronization" is missing an "r". <em>(Fixed in 6th printing.)</em>
   reporter: David Holmes
 -
   pages: 81
-  description: "In Figure 5.1, the threads are mislabeled: <tt>A</tt> and <tt>B</tt> should be exchanged. <it>(Fixed in 6th printing.)</it>"
+  description: "In Figure 5.1, the threads are mislabeled: <tt>A</tt> and <tt>B</tt> should be exchanged. <em>(Fixed in 6th printing.)</em>"
   reporter: David Biesack
 -
   pages: 84
-  description: In the first paragraph, "collections are arguments" should be "collections as arguments". <it>(Fixed in 6th printing.)</it>
+  description: In the first paragraph, "collections are arguments" should be "collections as arguments". <em>(Fixed in 6th printing.)</em>
   reporter: Alexei Nekrassov
 -
   pages: 89
@@ -68,23 +68,23 @@
   reporter: Joe Bowbeer
 -
   pages: 130
-  description: In Listing 6.15, <tt>info</tt> is superfluously marked <tt>final</tt>. <it>(Fixed in 6th printing.)</it>
+  description: In Listing 6.15, <tt>info</tt> is superfluously marked <tt>final</tt>. <em>(Fixed in 6th printing.)</em>
 -
   pages: 148
   description: 
     In <em>Asynchronous I/O with Selector</em>, it is the <tt>close</tt> method that causes
     <tt>select</tt> to return prematurely by throwing <tt>ClosedSelectedException</tt>,
-    not the <tt>wakeup</tt> method. <it>(Fixed in 6th printing.)</it>
+    not the <tt>wakeup</tt> method. <em>(Fixed in 6th printing.)</em>
   reporter: Matthias Ernst
 -
   pages: 153
-  description: In the second paragraph, "satifying" should be "satisfying". <it>(Fixed in 6th printing.)</it>
+  description: In the second paragraph, "satifying" should be "satisfying". <em>(Fixed in 6th printing.)</em>
   reporter: Tyler Hammond
 -
   pages: 154
   description: 
     In Listing 7.15, the last two <tt>synchronized (this)</tt> lines should read
-    <tt>synchronized (LogService.this)</tt>. <it>(Fixed in 6th printing.)</it>
+    <tt>synchronized (LogService.this)</tt>. <em>(Fixed in 6th printing.)</em>
   reporter: Tom Hawtin
 -
   pages: 172
@@ -92,13 +92,13 @@
   reporter: Mike Fikes
 -
   pages: 179
-  description: In the first sentence of Section 8.4, <tt>terminate</tt> should be <tt>terminated</tt>. <it>(Fixed in 6th printing.)</it>
+  description: In the first sentence of Section 8.4, <tt>terminate</tt> should be <tt>terminated</tt>. <em>(Fixed in 6th printing.)</em>
   reporter: Tom White
 -
   pages: 197
   description: 
     In Listing 9.6, the first instance of <tt>runningTask != null</tt> should
-    be <tt>runningTask == null</tt>. <it>(Fixed in 6th printing.)</it>
+    be <tt>runningTask == null</tt>. <em>(Fixed in 6th printing.)</em>
   reporter: Chris Heisterkamp
 -
   pages: 197
@@ -111,14 +111,14 @@
   description: 
     In Listing 9.8, the argument to <tt>backgroundExec.execute</tt> should be
     <tt>listener.task</tt> rather than just <tt>task</tt>, and the first and last lines
-    of the listing should be deleted. <it>(Fixed in 6th printing.)</it>
+    of the listing should be deleted. <em>(Fixed in 6th printing.)</em>
   reporter: Stephen Morring
 -
   pages: 214
   description: 
     In Listing 10.6, <tt>Taxi.setLocation</tt> should not be a synchronized method.
     (The synchronized block in its body is correct, however.)
-    <it>(Fixed in 6th printing.)</it>
+    <em>(Fixed in 6th printing.)</em>
 -
   pages: 239
   description: 'Section 11.4.5, second paragraph, fourth line: "excusively" should be "exclusively".'
@@ -140,10 +140,10 @@
   description: 
     In Listing 13.3, the relational operator in the 5th line from the bottom should
     be <tt>&gt;=</tt> (<em>greater-than-or-equals</em>), not <tt>&lt;</tt> (<em>less-than</em>).
-    <it>(Fixed in 6th printing.)</it>
+    <em>(Fixed in 6th printing.)</em>
 -
   pages: 292
-  description: In Listing 14.1, should have <tt>release lock</tt> after <tt>perform action</tt>. <it>(Fixed in 6th printing.)</it>
+  description: In Listing 14.1, should have <tt>release lock</tt> after <tt>perform action</tt>. <em>(Fixed in 6th printing.)</em>
 -
   pages: 301
   description: In the fifth bullet item in the middle of the page, "the the" should be "the".
@@ -153,12 +153,12 @@
   description: 
     In the first paragraph, "Both of these factors make it impossible to enforce the
     uniform waiter requirement for using <tt>notifyAll</tt>", it should be <tt>notify</tt>, not
-    <tt>notifyAll</tt>. <it>(Fixed in 6th printing.)</it>
+    <tt>notifyAll</tt>. <em>(Fixed in 6th printing.)</em>
 -
   pages: 340
   description: 
     In Figure 16.1, <tt>y=b</tt> should be <tt>x=b</tt> in Thread A, and <tt>x=a</tt>
-    should be <tt>y=a</tt> in Thread B. <it>(Fixed in 6th printing.)</it>
+    should be <tt>y=a</tt> in Thread B. <em>(Fixed in 6th printing.)</em>
   reporter: Will McQueen
 -
   pages: 345
