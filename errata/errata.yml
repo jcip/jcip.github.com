@@ -39,7 +39,6 @@
   description: 
     In Listing 4.16, "if (contains)" should be "if (!contains)". The entire example would
     be better expressed using a local variable "absent", as in the previous two listings.
-    <em>(Fixed in 6th printing.)</em>
   reporter: Milan Fort
 -
   pages: 74
