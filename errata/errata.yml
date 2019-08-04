@@ -49,6 +49,16 @@
   description: "In Figure 5.1, the threads are mislabeled: <tt>A</tt> and <tt>B</tt> should be exchanged. <em>(Fixed in 6th printing.)</em>"
   reporter: David Biesack
 -
+  pages: 83
+  description:
+    The last sentence on the page, about how <tt>synchronizedSet</tt> would prevent the error
+    described in the preceding paragraphs, while technically correct, is misleading, because
+    it falsely implies that <tt>synchronizedSet</tt> takes care of encapsulating synchronization
+    for iteration in general.
+    It only works because the <tt>toString</tt> implementation for <tt>SynchronizedSet</tt>
+    acquires the lock before calling the underlying <tt>toString</tt> method.
+  reporter: Jovan Krička
+-
   pages: 84
   description: In the first paragraph, "collections are arguments" should be "collections as arguments". <em>(Fixed in 6th printing.)</em>
   reporter: Alexei Nekrassov
