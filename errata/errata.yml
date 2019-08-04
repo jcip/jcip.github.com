@@ -52,7 +52,7 @@
   pages: 83
   description:
     The last sentence on the page, about how <tt>synchronizedSet</tt> would prevent the error
-    described in the preceding paragraphs, while technically correct, is misleading, because
+    described in the preceding paragraphs, while technically correct, is misleading because
     it falsely implies that <tt>synchronizedSet</tt> takes care of encapsulating synchronization
     for iteration in general.
     It only works because the <tt>toString</tt> implementation for <tt>SynchronizedSet</tt>
