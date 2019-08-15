@@ -22,7 +22,7 @@ public class ImprovedList<T> implements List<T> {
 
     public synchronized boolean putIfAbsent(T x) {
         boolean contains = list.contains(x);
-        if (contains)
+        if (!contains)
             list.add(x);
         return !contains;
     }
