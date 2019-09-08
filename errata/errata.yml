@@ -19,6 +19,10 @@
   description: In the last sentence, the reference to <tt>done</tt> should be to <tt>ready</tt>. <em>(Fixed in 6th printing.)</em>
   reporter: Mike Fikes
 -
+  pages: 38
+  description: In the callout, the second appearance of the word "verifying" is misspelled.
+  reporter: Shilo Ayalon
+-
   pages: 53
   description: The phrase "when shared a Date" should be "when sharing a Date". <em>(Fixed in 6th printing.)</em>
   reporter: Martin Buchholz
