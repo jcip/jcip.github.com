@@ -23,6 +23,10 @@
   description: In the callout, the second appearance of the word "verifying" is misspelled.
   reporter: Shilo Ayalon
 -
+  pages: 41
+  description: In the phrase, "When we need to <strong>a</strong> return vehicle locations", omit the "<strong>a</strong>".
+  reporter: Ashton Morgan
+-
   pages: 53
   description: The phrase "when shared a Date" should be "when sharing a Date". <em>(Fixed in 6th printing.)</em>
   reporter: Martin Buchholz
