@@ -31,7 +31,7 @@
   description: The phrase "when shared a Date" should be "when sharing a Date". <em>(Fixed in 6th printing.)</em>
   reporter: Martin Buchholz
 -
-  pages: 55
+  pages: 56
   description: At the bottom of the page, "relax encapsulation or serialization" should be "relax encapsulation or synchronization".
   reporter: Michał Przysucha
 -
