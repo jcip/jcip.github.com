@@ -31,6 +31,10 @@
   description: The phrase "when shared a Date" should be "when sharing a Date". <em>(Fixed in 6th printing.)</em>
   reporter: Martin Buchholz
 -
+  pages: 55
+  description: At the bottom of the page, "relax encapsulation or serialization" should be "relax encapsulation or synchronization".
+  reporter: Michał Przysucha
+-
   pages: 62
   description: In the last paragraph before section 4.3, "getLocation" should be "getLocations".
   reporter: Thomas Strohmann
