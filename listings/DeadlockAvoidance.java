@@ -23,7 +23,8 @@ public class DeadlockAvoidance {
             throws InsufficientFundsException, InterruptedException {
         long fixedDelay = getFixedDelayComponentNanos(timeout, unit);
         long randMod = getRandomDelayModulusNanos(timeout, unit);
-        long stopTime = System.nanoTime() + unit.toNanos(timeout);
+        long timeoutNanos = unit.toNanos(timeout);
+        long startTime = System.nanoTime();
 
         while (true) {
             if (fromAcct.lock.tryLock()) {
@@ -45,7 +46,7 @@ public class DeadlockAvoidance {
                     fromAcct.lock.unlock();
                 }
             }
-            if (System.nanoTime() < stopTime)
+            if (System.nanoTime() - startTime < timeoutNanos)
                 return false;
             NANOSECONDS.sleep(fixedDelay + rnd.nextLong() % randMod);
         }
