@@ -45,7 +45,7 @@ public class DeadlockAvoidance {
                     fromAcct.lock.unlock();
                 }
             }
-            if (System.nanoTime() < stopTime)
+            if (System.nanoTime() >= stopTime)
                 return false;
             NANOSECONDS.sleep(fixedDelay + rnd.nextLong() % randMod);
         }
