@@ -165,6 +165,14 @@
     be <tt>&gt;=</tt> (<em>greater-than-or-equals</em>), not <tt>&lt;</tt> (<em>less-than</em>).
     <em>(Fixed in 6th printing.)</em>
 -
+  pages: 280
+  description:
+    In Listing 13.3, should not compare values returned from <tt>System.nanoTime</tt>
+    because of the possibility of overflow; instead, subtract the earlier from the later
+    and compare to nanosecond interval length.
+    <em>(Fixed in Listing 13.3 on website only.)</em>
+  reporter: Nathan Eckert
+-
   pages: 292
   description: In Listing 14.1, should have <tt>release lock</tt> after <tt>perform action</tt>. <em>(Fixed in 6th printing.)</em>
 -
