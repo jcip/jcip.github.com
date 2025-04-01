@@ -186,6 +186,13 @@
     uniform waiter requirement for using <tt>notifyAll</tt>", it should be <tt>notify</tt>, not
     <tt>notifyAll</tt>. <em>(Fixed in 6th printing.)</em>
 -
+  pages: 314
+  description: 
+    Footnote 14, it appears, was written against different (earlier?) code.
+    The situation with Listing 14.15 is more involved; for a discussion, see
+    <a href="https://stackoverflow.com/questions/18732088/how-does-the-piggybacking-of-current-thread-variable-in-reentrantlock-sync-work">
+    this StackOverflow page</a>.
+-
   pages: 340
   description: 
     In Figure 16.1, <tt>y=b</tt> should be <tt>x=b</tt> in Thread A, and <tt>x=a</tt>
